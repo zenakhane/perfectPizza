@@ -17,6 +17,12 @@ body {
    .btn-secondary{
      margin-left: 700px;
    }
+   .btn-warning{
+    margin-left: 700px;
+  }
+  .btn-danger{
+    margin-left: 700px;
+  }
   .small {
     background-color: #ec8bad;
   }
