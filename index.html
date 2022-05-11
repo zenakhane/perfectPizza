@@ -13,96 +13,108 @@
 </head>
 
 <body>
-  <div x-data="{ pizza: ['small', 'medium', 'large'] }">
+  <h3> <img src="IMG-20220509-WA0006_4.jpg" alt="" srcset=""></h3>
+  <div x-data="{ small: 0, medium: 0, large:0 , total:0 , qtyS:0, qtyM:0 , qtyL:0 }">
+
     <h2 class="head">Shopping Cart</h2>
-   <!-- <template x-for="cart"> -->
-    <table class="table table-bordered">
+    <table class="table table-striped">
       <th>
       <td>QTY</td>
       <td>Price</td>
-      <!-- <td>+/-</td> -->
+      <td>+/-</td>
       </th>
       <tr>
-        <td><strong>Small pizzas total:</strong></td>
-        <td><span class="smallTotalPrice"></span></td>
-        <td><span class="smallTotalPrice"></span></td>
+        <td><strong>Small pizza(s):</strong></td>
+        <td><span x-text= "qtyS"  class="smallTotalPrice"></span></td>
+        <td><span x-text="small" class="smallTotalPrice"></span></td>
+        <td> <button @click="qtyS++">+</button>
+        <button @click="qtyS--">-</button>
+        </td>
       </tr>
       <tr>
-        <td><strong>Medium pizzas total:</strong></td>
-        <td><span class="mediumTotalPrice"></span></td>
-        <td><span class="mediumTotalPrice"></span></td>
+        <td><strong>Medium pizza(s):</strong></td>
+        <td><span x-text="qtyM" class="mediumTotalPrice"></span></td>
+        <td><span x-text="medium" class="mediumTotalPrice"></span></td>
+
+        <td> <button @click="qtyM++">+</button>
+          <button @click="qtyM--">-</button>
+        </td>
       </tr>
       <tr>
-        <td><strong>Large pizza total:</strong></td>
-        <td><span class="largeTotalPrice"></span></td>
-        <td><span class="largeTotalPrice"></span></td>
+        <td><strong>Large pizza(s):</strong></td>
+        <td><span  x-text="qtyL" class="largeTotalPrice"></span></td>
+        <td><span x-text="large" class="largeTotalPrice"></span></td>
+        <td>
+          <button @click="qtyL++">+</button>
+          <button @click="qtyL--">-</button>
+        </td>
       </tr>
       <tr>
         <td><strong>Total cost</strong></td>
-        <td><span class="cartTotalPrice"></span></td>
-        <td><span class="cartTotalPrice"></span></td>
+        <td><span  class="cartTotalPrice"></span></td>
+        <td><span x-text="total" class="cartTotalPrice "></span></td>
       </tr>
       <tr>
       </tr>
     </table>
-
+    <!-- 
     <div x-data="{ count: 1 }">
       <p x-text="count"></p>
-      <button class="btn btn-warning" @click="count++">+</button>
-      <button class="btn btn-danger" @click="count--">-</button>
-    </div>
-   <!-- </template> -->
+      <button @click="count++">+</button>
+      <button @click="count--">-</button>
+    </div> -->
+    </template>
 
-   
 
-    <div  x-data="">
+
+    <div x-data="">
       <!-- <p x-text=""></p> -->
-      <button class="btn btn-secondary" @click="BUY">BUY</button>
+      <button class="btn btn-outline-dark" @click="BUY">Checkout</button>
     </div>
-  </div>
-  <div class="specials">
-    <div class="small">
-      <img src="https://image.shutterstock.com/image-vector/italian-pizza-tomato-sausage-olive-600w-554691619.jpg"
-        alt="">
-      <h2>Small Pizza</h2>
-      <h3>R48.99</h3>
-      <i>
-        <ul>
-          <li>small pizza with 3 toppings</li>
-          <li>1 meat topping.</li>
-          <li>3 or less other toppings.</li>
-        </ul>
-      </i><br>
-      <button class="btn btn-primary btn-sm" @click="ORDER">Order</button>
-    </div>
-    <div class="medium">
-      <img src="https://image.shutterstock.com/image-vector/italian-pizza-tomato-sausage-olive-600w-554691619.jpg"
-        alt="">
-      <h2>Medium Pizza</h2>
-      <h3>R78.99</h3>
-      <i>
-        <li> medium margeritha pizza with 3 toppings max.
-        </li>
-        <li> 2 or less meat topping.</li>
-        <li> 3 or less other toppings.
-        </li>
-      </i><br>
-      <button class="btn btn-primary btn-sm" @click="ORDER">Order</button>
+    <div class="specials">
+      <div class="small">
+        <img src="https://image.shutterstock.com/image-vector/italian-pizza-tomato-sausage-olive-600w-554691619.jpg"
+          alt="">
+        <h2>Small Pizza</h2>
+        <h3>R48.99</h3>
+        <i>
+          <ul>
+            <li>small pizza with 3 toppings</li>
+            <li>1 meat topping.</li>
+            <li>3 or less other toppings.</li>
+          </ul>
+        </i><br>
+        <button class="btn btn-primary btn-sm" @click="small+=48.99,total+=48.99,qtyS+=1">Order</button>
+      </div>
+      <div class="medium">
+        <img src="https://image.shutterstock.com/image-vector/italian-pizza-tomato-sausage-olive-600w-554691619.jpg"
+          alt="">
+        <h2>Medium Pizza</h2>
+        <h3>R78.99</h3>
+        <i>
+          <li> medium margeritha pizza with 3 toppings max.
+          </li>
+          <li> 2 or less meat topping.</li>
+          <li> 3 or less other toppings.
+          </li>
+        </i><br>
+        <button class="btn btn-primary btn-sm" @click="medium+=78.99, total+=78.99,qtyM+=1">Order</button>
 
-    </div>
-    <div class="large">
-      <img src="https://image.shutterstock.com/image-vector/italian-pizza-tomato-sausage-olive-600w-554691619.jpg"
-        alt="">
-      <h2>Large Pizza</h2>
-      <h3>R114.99</h3>
-      <i>
-        <li>large margeritha pizza with 3 toppings max.</li>
-        <li> 3 meat toppings max. </li>
-        <li> 3 or less other toppings.
-        </li>
-      </i><br>
-      <button class="btn btn-primary btn-sm" @click="ORDER">Order</button>
+      </div>
+      <div class="large">
+        <img src="https://image.shutterstock.com/image-vector/italian-pizza-tomato-sausage-olive-600w-554691619.jpg"
+          alt="">
+        <h2>Large Pizza</h2>
+        <h3>R114.99</h3>
+        <i>
+          <li>large margeritha pizza with 3 toppings max.</li>
+          <li> 3 meat toppings max. </li>
+          <li> 3 or less other toppings.
+          </li>
+        </i><br>
+        <button class="btn btn-primary btn-sm" @click="large +=114.99, total+=114.99,qtyL+=1">Order</button>
 
+      </div>
     </div>
 
   </div>

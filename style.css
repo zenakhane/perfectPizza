@@ -2,18 +2,26 @@
 body {
     background: white;
     font-family: arial, sans-serif;
-    background-color: #3FA9E2;
+    /* background-color: #3FA9E2; */
     font-size: 0.55em;
+}
+h3{
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
   .head {
     margin-left: 1em;
   }
   .table {
-     /* width: 80%; */
-     margin: 1em;
+     width: 80%; 
+     margin: 0.55em;
    }
+.checkout{
+  margin-left: 700px;
 
+}
    .btn-secondary{
      margin-left: 700px;
    }
