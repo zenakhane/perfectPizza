@@ -23,16 +23,16 @@
                <td><strong>Small pizza(s):</strong></td>
                <td><span x-text="qtyS" x-show="small"  class="smallTotalPrice"></span></td>
                <td><span x-text="small" x-show="small"class="smallTotalPrice"></span></td>
-               <td> <button @click="qtyS++" x-show="small">+</button>
-                  <button @click="qtyS--" x-show="small">-</button>
+               <td> <button @click="qtyS++,small +=48.99,total +=48.99" x-show="small">+</button>
+                  <button @click="qtyS--,small -=48.99,total -=48.99" x-show="small">-</button>
                </td>
             </tr>
             <tr>
                <td><strong>Medium pizza(s):</strong></td>
                <td><span x-text="qtyM" x-show="medium" class="mediumTotalPrice"></span></td>
                <td><span x-text="medium"x-show="medium" class="mediumTotalPrice"></span></td>
-               <td> <button @click="qtyM++"x-show="medium">+</button>
-                  <button @click="qtyM--"x-show="medium">-</button>
+               <td> <button @click="qtyM++,medium +=78.99,total +=78.99"x-show="medium">+</button>
+                  <button @click="qtyM--,medium -=78.99,total -=78.99"x-show="medium">-</button>
                </td>
             </tr>
             <tr>
@@ -40,8 +40,8 @@
                <td><span  x-text="qtyL" x-show="large" class="largeTotalPrice"></span></td>
                <td><span x-text="large" x-show="large"class="largeTotalPrice"></span></td>
                <td>
-                  <button @click="qtyL++" x-show="large">+</button>
-                  <button @click="qtyL--"x-show="large">-</button>
+                  <button @click="qtyL++,large +=114.99,total +=114.99" x-show="large">+</button>
+                  <button @click="qtyL--,large -=114.99,total -=114.99"x-show="large">-</button>
                </td>
             </tr>
             <tr>
